@@ -2,7 +2,7 @@
 - Python 3.13.2
 - Pytorch 2.6.0+cu126
 - CUDA 12.6
-- Pretrained Model
+- Pretrained Model: PANNs CNN14 Model
 - Dataset: Kaggle-alarm-dataset-3000
 
 > ## Link
