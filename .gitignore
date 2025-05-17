@@ -1,4 +1,4 @@
-/audioset_tagging_cnn
 /checkpoint
-/onnx
 /Dataset
+/onnx
+/result
