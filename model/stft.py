@@ -40,5 +40,7 @@ class AudioPreprocessor(nn.Module):
         
         # 학습 모드일 때만 SpecAugmentation 적용
         if training:
+            # print(">>> SpecAugmentation 적용됨!")
             x = self.spec_augmenter(x)
+
         return x

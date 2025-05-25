@@ -1,6 +1,6 @@
 > ## [한이음 드림업]청각장애인 안전을 위한 AI기반 스마트 넥밴드
-- Python 3.13.2
-- Pytorch 2.6.0+cu126
+- Python 3.12.9
+- Pytorch 2.7.0
 - CUDA 12.6
 - Pretrained Model: PANNs CNN14 Model
 - Dataset: Kaggle-alarm-dataset-3000

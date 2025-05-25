@@ -1,6 +1,10 @@
-/checkpoint
-/Dataset
-/onnx
-/result
-/sample
-/model_test.ipynb
+*/__pycache__/
+checkpoint/
+Dataset/
+onnx/
+result/
+sample/
+runs/
+calibration/
+*test*.*
+obsoleted_models/
