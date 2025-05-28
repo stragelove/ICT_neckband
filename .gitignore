@@ -1,4 +1,5 @@
 */__pycache__/
+__pycache__
 checkpoint/
 Dataset/
 onnx/
@@ -9,3 +10,4 @@ calibration/
 *test*.*
 obsoleted_models/
 calibration_preprocess/
+backup/
