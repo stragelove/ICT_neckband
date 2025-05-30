@@ -2,6 +2,8 @@
 - Python 3.12.9
 - Pytorch 2.7.0
 - CUDA 12.6
+- Docker Desktop 28.2.1
+- Hailo SDK 2025-04
 - Pretrained Model: PANNs CNN14 Model
 - Dataset: Kaggle-alarm-dataset-3000
 
@@ -12,3 +14,5 @@
 - Calibration Dataset: https://drive.google.com/file/d/1IJ48OeQQyQv_k8d-xSVhuL83JjlqfOX_/view?usp=drive_link
 - Trained Model: https://drive.google.com/file/d/1vds8aukhsb4VJEWrg_JtEsMgBdkgD7yI/view?usp=drive_link
 - ONNX Model: https://drive.google.com/file/d/10rRXfX7Tza7iSoOVbaDvwQt0gz7kyc1D/view?usp=drive_link
+- Hailo SDK: https://hailo.ai/developer-zone/software-downloads/
+- Docker: https://www.docker.com/products/docker-desktop/
