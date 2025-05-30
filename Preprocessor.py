@@ -1,7 +1,7 @@
 import torch
 from torchaudio.transforms import MelScale, FrequencyMasking, TimeMasking
 
-def logmel(waveform, sample_rate=16000, n_fft=512, hop_length=160, win_length=512, n_mels=64, fmin=50, fmax=8000, top_db=None):
+def logmel(waveform, sample_rate=16000, n_fft=512, hop_length=160, win_length=512, n_mels=64, fmin=50, fmax=8000, top_db=80):
     """
     waveform: [channel, num_samples] 또는 [num_samples]
     return: [channel, mel_bins, time]
