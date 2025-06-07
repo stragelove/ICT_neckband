@@ -12,3 +12,4 @@ obsoleted_models/
 calibration_dataset/
 *calib_dataset*.*
 backup/
+*.hef
