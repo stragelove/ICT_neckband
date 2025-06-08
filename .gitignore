@@ -1,0 +1,8 @@
+__pycache__
+.vscode
+backup
+dataset
+*env*
+*hailo*
+object_detection
+sample
