@@ -4,8 +4,8 @@ import torch.nn.functional as F
 import torchaudio
 import torchaudio.transforms as T
 
-def logmel(audio,
-           time,                # 1초=16000샘플 등, “길이(샘플 수)” 의미
+def logmel(source,
+           num_samples,
            sample_rate=16000,
            n_fft=512,
            hop_length=160,
@@ -28,13 +28,13 @@ def logmel(audio,
                  None이면 클리핑 생략
     """
 
-    if isinstance(audio, np.ndarray):
-        # 파일 경로 대신 ndarray 입력일 때 처리
-        waveform = torch.from_numpy(audio.flatten())
+    if isinstance(source, np.ndarray):
+        # ndarray 입력일 때 처리
+        waveform = torch.from_numpy(source.flatten())
         sr = sample_rate
     else:
-        # 기존 로직: 경로 → load
-        waveform, sr = torchaudio.load(audio)
+        # raw파일일때 처리
+        waveform, sr = torchaudio.load(source)
 
     # (1-a) 1차원 → 2차원으로 변환 (채널 축 추가)
     if waveform.dim() == 1:
@@ -50,10 +50,10 @@ def logmel(audio,
         waveform = resampler(waveform)
 
     # 길이 보정(패딩/자르기)
-    if waveform.shape[1] < time:
-        waveform = F.pad(waveform, (0, time - waveform.shape[1]))
+    if waveform.shape[1] < num_samples:
+        waveform = F.pad(waveform, (0, num_samples - waveform.shape[1]))
     else:
-        waveform = waveform[:, :time]
+        waveform = waveform[:, :num_samples]
 
     # 최대값 정규화
     waveform = waveform / (waveform.abs().max() + 1e-9)
@@ -106,6 +106,7 @@ def scale(logmel_np, uint8=False):
     else:
         return x
 
+# 과적합 방지용 시간/주파수 마스킹(학습 전용)
 def spec_augmentation(logmel, time_drop_width=64, time_stripes_num=2, freq_drop_width=8, freq_stripes_num=2):
     """
     logmel: [channel, mel_bins, time]
