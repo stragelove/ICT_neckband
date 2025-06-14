@@ -38,7 +38,6 @@ def stream():
 
 @app.route('/')
 def index():
-    # templates/index.html을 불러옵니다
     return render_template('index.html')
 
 if __name__ == "__main__":
