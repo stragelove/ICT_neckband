@@ -7,9 +7,9 @@ result/
 sample/
 runs/
 calibration/
-*test*.*
+*test*
 obsoleted_models/
 calibration_dataset/
-*calib_dataset*.*
+*calib_dataset*
 backup/
 *.hef
