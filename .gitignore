@@ -3,6 +3,4 @@ __pycache__
 backup
 dataset
 *env*
-*hailo*
-object_detection
-sample
+hailort

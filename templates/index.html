@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>경보음 분류</title>
+</head>
+<body>
+    <h1>실시간 경보음 분류 결과</h1>
+    <pre id="result">분류중...</pre>
+
+    <script>
+        const evtSource = new EventSource("/stream");
+        const pre = document.getElementById("result");
+
+        evtSource.onmessage = e => {
+            const obj = JSON.parse(e.data);
+            pre.textContent = `클래스: ${obj.클래스}\n확률: ${(obj.확률*100).toFixed(2)}%`;
+        };
+
+        evtSource.onerror = () => {
+        pre.textContent = '스트림 연결이 끊어졌습니다.';
+        evtSource.close();
+        };
+    </script>
+</body>
+</html>
